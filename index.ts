@@ -31,9 +31,11 @@ const logNumber: (i: number) => void = (i: number) => {
     console.log(i)
 }
 
-logNumber(oranges)
+//Type Inference
+let red = 'red' //TI works - Type 'String'
 
-
+let blue
+blue = 'blue' //TI does not work - Type 'Any'
 
 //------------------------------------------------------------------------
 // import axios from 'axios'
