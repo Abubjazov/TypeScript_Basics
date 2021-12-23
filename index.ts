@@ -5,11 +5,15 @@ const drink = {
     sugar: 40
 }
 
-const drinkTuple = ['brown', true, 40]
+const drinkTuple: [string, boolean, number] = ['brown', true, 40]
 
+drinkTuple[0] = true
 
+type Drink = [string, boolean, number] //Type alias
 
+const cola: Drink = ['brown', true, 40]
 
+cola[1] = true
 
 //---Typed Arrays--------------------------------------------------------------
 // const colors: string[] = ['red', 'green', 'black']
