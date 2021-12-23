@@ -1,38 +1,59 @@
+//---Type Annotations Obj's----------------------------------------------
+const profile = {
+    name: 'Jack',
+    age: 25,
+    coordinates: {
+        lat: 25.2654841212315,
+        lng: 44.7564689463133
+    },
+    setAge(age: number): void {
+        this.age = age
+    }
+}
+
+const {age}: {age: number} = profile
+
+const {coordinates: {lat, lng}}: {coordinates: {lat: number, lng: number}} = profile
+
+
+
+
+
 //---Type Annotations Func's----------------------------------------------
-const addNumbers = (a: number, b: number): number => {
-    return a + b 
-}
+// const addNumbers = (a: number, b: number): number => {
+//     return a + b 
+// }
 
-const subNumbers = (a: number, b: number): number => {
-    return a - b
-}
+// const subNumbers = (a: number, b: number): number => {
+//     return a - b
+// }
 
-function divNumbers(a: number, b: number): number {
-    return a / b
-}
+// function divNumbers(a: number, b: number): number {
+//     return a / b
+// }
 
-const mulNumbers = function(a: number, b: number): number {
-    return a * b
-}
+// const mulNumbers = function(a: number, b: number): number {
+//     return a * b
+// }
 
-const logger = (msg: string): void => {
-    console.log(msg)
-}
+// const logger = (msg: string): void => {
+//     console.log(msg)
+// }
 
-const throwError = (msg: string): never => {
-    throw new Error(msg)
-}
+// const throwError = (msg: string): never => {
+//     throw new Error(msg)
+// }
 
-const forecastToday = {
-    date: new Date(),
-    weather: 'sunny'
-}
+// const forecastToday = {
+//     date: new Date(),
+//     weather: 'sunny'
+// }
 
-const logWeather = ({date, weather}: {date: Date, weather: string}): void => {
-    console.log(date, weather)
-}
+// const logWeather = ({date, weather}: {date: Date, weather: string}): void => {
+//     console.log(date, weather)
+// }
 
-logWeather(forecastToday)
+// logWeather(forecastToday)
 
 
 //---Type Annotations-----------------------------------------------------
