@@ -1,25 +1,36 @@
-import axios from 'axios'
+//---Type Annotations-----------------------------------------------------
+let oranges: number = 5
+let speed: string = 'fast'
+let hasDog: boolean = true
+let nothing: null = null
+let nothing2: undefined = undefined
 
-const url = 'https://jsonplaceholder.typicode.com/todos/14'
+//built-in objects
+let now: Date = new Date()
 
-interface Todo {
-    id: number
-    title: string
-    completed: boolean
-}
+//------------------------------------------------------------------------
+// import axios from 'axios'
 
-const logTodo = (id: number, title: string, completed: boolean) => {
+// const url = 'https://jsonplaceholder.typicode.com/todos/14'
 
-    console.log(`
-        The Todo with ID: ${id}
-        Has title: ${title} 
-        Is finished: ${completed}
-    `)
-}
+// interface Todo {
+//     id: number
+//     title: string
+//     completed: boolean
+// }
 
-axios.get(url)
-    .then(res => {
-        const {id, title, completed } = res.data as Todo
+// const logTodo = (id: number, title: string, completed: boolean) => {
 
-        logTodo(id, title, completed)
-    })
+//     console.log(`
+//         The Todo with ID: ${id}
+//         Has title: ${title} 
+//         Is finished: ${completed}
+//     `)
+// }
+
+// axios.get(url)
+//     .then(res => {
+//         const {id, title, completed } = res.data as Todo
+
+//         logTodo(id, title, completed)
+//     })
