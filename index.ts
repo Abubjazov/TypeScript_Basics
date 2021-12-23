@@ -37,6 +37,30 @@ let red = 'red' //TI works - Type 'String'
 let blue
 blue = 'blue' //TI does not work - Type 'Any'
 
+//When to use type annotations
+
+//1) Function returns the 'any' type
+const json = '{"x": 10, "y": 20}'
+const coordinates: {x: number; y: number} = JSON.parse(json) //JSON.parse return type 'any'
+
+console.log(coordinates)
+
+//2) Lazy initialization
+let words = ['one', 'two', 'three']
+let isTwo: number = -1
+
+words.forEach((item, index) => item === 'two' ? isTwo = index : null)
+
+console.log(isTwo)
+
+//3) Variables whose type cannot be inferred
+let myNumbers = [-10, -3, 13]
+let positiveNumb: number | boolean = false
+
+myNumbers.forEach(item => item > 0 ? positiveNumb = item : positiveNumb = false)
+
+console.log(positiveNumb)
+
 //------------------------------------------------------------------------
 // import axios from 'axios'
 
