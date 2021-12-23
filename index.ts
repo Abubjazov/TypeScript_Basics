@@ -1,21 +1,51 @@
+//---Typed Arrays--------------------------------------------------------------
+const colors: string[] = ['red', 'green', 'black']
+
+const dates = [new Date()]
+
+const fruitsByColor: string[][] = [
+    ['cherry'],
+    ['apple'],
+    ['lemon']
+]
+
+//Extracting values
+const color: boolean = colors[0]
+const color2 = colors.pop()
+
+//Prevent incompatible values
+colors.push(true)
+
+//Help with 'map'
+colors.map((color: string): string => {
+    return color.toUpperCase()
+})
+
+//Flexible types
+const impotantDates = [new Date(), '2021-11-11', true, 12]
+const impotantDates2: (Date | string)[] = [new Date()]
+
+impotantDates2.push('2021-11-11')
+impotantDates2.push(13)
+
+
+
 //---Type Annotations Obj's----------------------------------------------
-const profile = {
-    name: 'Jack',
-    age: 25,
-    coordinates: {
-        lat: 25.2654841212315,
-        lng: 44.7564689463133
-    },
-    setAge(age: number): void {
-        this.age = age
-    }
-}
+// const profile = {
+//     name: 'Jack',
+//     age: 25,
+//     coordinates: {
+//         lat: 25.2654841212315,
+//         lng: 44.7564689463133
+//     },
+//     setAge(age: number): void {
+//         this.age = age
+//     }
+// }
 
-const {age}: {age: number} = profile
+// const {age}: {age: number} = profile
 
-const {coordinates: {lat, lng}}: {coordinates: {lat: number, lng: number}} = profile
-
-
+// const {coordinates: {lat, lng}}: {coordinates: {lat: number, lng: number}} = profile
 
 
 
