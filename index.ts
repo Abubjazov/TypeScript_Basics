@@ -26,6 +26,14 @@ const point: {x: number; y: number} = {
     y: 31
 }
 
+//Functions
+const logNumber: (i: number) => void = (i: number) => {
+    console.log(i)
+}
+
+logNumber(oranges)
+
+
 
 //------------------------------------------------------------------------
 // import axios from 'axios'
