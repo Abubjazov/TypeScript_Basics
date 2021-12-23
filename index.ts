@@ -8,6 +8,25 @@ let nothing2: undefined = undefined
 //built-in objects
 let now: Date = new Date()
 
+//Array
+let colors: string[] = ['red', 'yellow']
+let numbers: number[] = [1, 3]
+let results: boolean[] = [true, false]
+
+//Class
+class Car {
+
+}
+
+let car: Car = new Car()
+
+//Object
+const point: {x: number; y: number} = {
+    x: 13,
+    y: 31
+}
+
+
 //------------------------------------------------------------------------
 // import axios from 'axios'
 
