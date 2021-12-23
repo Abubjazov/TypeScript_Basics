@@ -1,32 +1,45 @@
+//---Tuples-------------------------------------------------------------------
+const drink = {
+    color: 'brown',
+    carbonated: true,
+    sugar: 40
+}
+
+const drinkTuple = ['brown', true, 40]
+
+
+
+
+
 //---Typed Arrays--------------------------------------------------------------
-const colors: string[] = ['red', 'green', 'black']
+// const colors: string[] = ['red', 'green', 'black']
 
-const dates = [new Date()]
+// const dates = [new Date()]
 
-const fruitsByColor: string[][] = [
-    ['cherry'],
-    ['apple'],
-    ['lemon']
-]
+// const fruitsByColor: string[][] = [
+//     ['cherry'],
+//     ['apple'],
+//     ['lemon']
+// ]
 
-//Extracting values
-const color: boolean = colors[0]
-const color2 = colors.pop()
+// //Extracting values
+// const color: boolean = colors[0]
+// const color2 = colors.pop()
 
-//Prevent incompatible values
-colors.push(true)
+// //Prevent incompatible values
+// colors.push(true)
 
-//Help with 'map'
-colors.map((color: string): string => {
-    return color.toUpperCase()
-})
+// //Help with 'map'
+// colors.map((color: string): string => {
+//     return color.toUpperCase()
+// })
 
-//Flexible types
-const impotantDates = [new Date(), '2021-11-11', true, 12]
-const impotantDates2: (Date | string)[] = [new Date()]
+// //Flexible types
+// const impotantDates = [new Date(), '2021-11-11', true, 12]
+// const impotantDates2: (Date | string)[] = [new Date()]
 
-impotantDates2.push('2021-11-11')
-impotantDates2.push(13)
+// impotantDates2.push('2021-11-11')
+// impotantDates2.push(13)
 
 
 
