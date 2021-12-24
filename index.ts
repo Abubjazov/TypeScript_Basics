@@ -1,5 +1,5 @@
 //---Interfaces---------------------------------------------------------------
-interface Summary {
+interface Reportable {
     summary(): string
 }
 
@@ -16,11 +16,11 @@ const civic = {
     }
 }
 
-const printCar = (car: Summary): void => {
-    console.log(car.summary())
+const printReport = (item: Reportable): void => {
+    console.log(item.summary())
 }
 
-printCar(civic)
+printReport(civic)
 
 //---Tuples-------------------------------------------------------------------
 // const drink = {
