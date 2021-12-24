@@ -1,8 +1,5 @@
 //---Interfaces---------------------------------------------------------------
-interface Car {
-    name: string
-    year: number 
-    broken: boolean
+interface Summary {
     summary(): string
 }
 
@@ -19,7 +16,7 @@ const civic = {
     }
 }
 
-const printCar = (car: Car): void => {
+const printCar = (car: Summary): void => {
     console.log(car.summary())
 }
 
