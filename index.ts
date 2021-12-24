@@ -3,6 +3,10 @@ interface Reportable {
     summary(): string
 }
 
+const printReport = (item: Reportable): void => {
+    console.log(item.summary())
+}
+
 const civic = {
     name: 'Civic',
     year: 2000,
@@ -16,11 +20,21 @@ const civic = {
     }
 }
 
-const printReport = (item: Reportable): void => {
-    console.log(item.summary())
+const drink = {
+    color:'brown',
+    carbonated: true,
+    sugar: 40,
+    summary() {
+        return `
+            Drink color: ${this.color}
+            Drink carbonated: ${this.carbonated}
+            Sugar content: ${this.sugar}
+    `
+    }
 }
 
 printReport(civic)
+printReport(drink)
 
 //---Tuples-------------------------------------------------------------------
 // const drink = {
