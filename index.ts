@@ -33,6 +33,10 @@ class Vehicle {
 }
 
 class Car extends Vehicle {
+    constructor(public wheels: number, color: string) {
+        super(color)
+    }
+
     private beep(): void {
         console.log('Beep')
     }
@@ -52,11 +56,12 @@ vehicle.start()
 vehicle.stop()
 console.log(vehicle.color)
 
-// const car = new Car()
-// car.startDrive()
-// car.stop()
-// car.parking()
-// console.log(car.color)
+const car = new Car(4, 'silver')
+car.startDrive()
+car.stop()
+car.parking()
+console.log(car.color)
+console.log(car.wheels)
 
 //---Interfaces---------------------------------------------------------------
 // interface Reportable {
