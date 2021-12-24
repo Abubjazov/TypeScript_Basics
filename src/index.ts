@@ -1,1 +1,1 @@
-console.log('Hello from TS! )')
+import { User } from './User';
