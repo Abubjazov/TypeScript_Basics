@@ -1,19 +1,50 @@
-//---Tuples-------------------------------------------------------------------
-const drink = {
-    color: 'brown',
-    carbonated: true,
-    sugar: 40
+//---Interfaces---------------------------------------------------------------
+interface Car {
+    name: string
+    year: number 
+    broken: boolean
 }
 
-const drinkTuple: [string, boolean, number] = ['brown', true, 40]
+const civic = {
+    name: 'Civic',
+    year: 2000,
+    broken: true
+}
 
-drinkTuple[0] = true
+const printCar = ({name, year, broken}: Car): void => {
+    console.log(`
+        Name: ${name}
+        Year: ${year}
+        Broken: ${broken}
+    `)
+}
 
-type Drink = [string, boolean, number] //Type alias
+printCar(civic)
 
-const cola: Drink = ['brown', true, 40]
+//---Tuples-------------------------------------------------------------------
+// const drink = {
+//     color: 'brown',
+//     carbonated: true,
+//     sugar: 40
+// }
 
-cola[1] = true
+// const drinkTuple: [string, boolean, number] = ['brown', true, 40]
+
+// drinkTuple[0] = true
+
+// type Drink = [string, boolean, number] //Type alias
+
+// const cola: Drink = ['brown', true, 40]
+
+// cola[1] = true
+
+
+// const carSpecs: [number, number] = [400, 3354]
+
+// const carSpecsObj = {
+//     hp: 400,
+//     weight: 3354
+// }
 
 //---Typed Arrays--------------------------------------------------------------
 // const colors: string[] = ['red', 'green', 'black']
