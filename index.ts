@@ -1,28 +1,38 @@
 //---Classes------------------------------------------------------------------
 class Vehicle {
-    drive(): void {
+    protected drive(): void {
         console.log('Drive mode activated')
     }
-    stop(): void {
+
+    public stop(): void {
         console.log('Stop mode activated')
+    }
+    start() {
+        this.drive()
     }
 }
 
 class Car extends Vehicle {
-    drive(): void {
-        console.log('Car drive mode activated')
+    private beep(): void {
+        console.log('Beep')
     }
-    parking(): void {
+
+    startDrive(): void {
+        this.beep()
+        this.drive()
+    }
+
+    public parking(): void {
         console.log('Car parking mode activated')
     }
 }
 
-const vehicle = new Vehicle()
-vehicle.drive()
-vehicle.stop()
+// const vehicle = new Vehicle()
+// vehicle.start()
+// vehicle.stop()
 
 const car = new Car()
-car.drive()
+car.startDrive()
 car.stop()
 car.parking()
 
