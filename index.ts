@@ -1,12 +1,32 @@
 //---Classes------------------------------------------------------------------
 class Vehicle {
+    mode: string = 'Parking'
+    // color: string
+
+    // constructor(color: string) {
+    //     this.color = color
+    // }
+    constructor(public color: string) {}
+
+    protected print(): void {
+        console.log(`${this.mode} mode activated`)
+    }
+
     protected drive(): void {
-        console.log('Drive mode activated')
+        this.mode = 'Drive'
+        this.print()
     }
 
     public stop(): void {
-        console.log('Stop mode activated')
+        this.mode = 'Stop'
+        this.print()
     }
+
+    public parking(): void {
+        this.mode = 'Parking'
+        this.print()
+    }
+
     start() {
         this.drive()
     }
@@ -27,14 +47,16 @@ class Car extends Vehicle {
     }
 }
 
-// const vehicle = new Vehicle()
-// vehicle.start()
-// vehicle.stop()
+const vehicle = new Vehicle('red')
+vehicle.start()
+vehicle.stop()
+console.log(vehicle.color)
 
-const car = new Car()
-car.startDrive()
-car.stop()
-car.parking()
+// const car = new Car()
+// car.startDrive()
+// car.stop()
+// car.parking()
+// console.log(car.color)
 
 //---Interfaces---------------------------------------------------------------
 // interface Reportable {
