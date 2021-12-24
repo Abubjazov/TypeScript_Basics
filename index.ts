@@ -3,20 +3,24 @@ interface Car {
     name: string
     year: number 
     broken: boolean
+    summary(): string
 }
 
 const civic = {
     name: 'Civic',
     year: 2000,
-    broken: true
+    broken: true,
+    summary() {
+        return `
+            Name: ${this.name}
+            Year: ${this.year}
+            Broken: ${this.broken}
+    `
+    }
 }
 
-const printCar = ({name, year, broken}: Car): void => {
-    console.log(`
-        Name: ${name}
-        Year: ${year}
-        Broken: ${broken}
-    `)
+const printCar = (car: Car): void => {
+    console.log(car.summary())
 }
 
 printCar(civic)
