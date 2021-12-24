@@ -6,6 +6,7 @@ class Vehicle {
     // constructor(color: string) {
     //     this.color = color
     // }
+    
     constructor(public color: string) {}
 
     protected print(): void {
