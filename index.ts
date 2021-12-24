@@ -1,40 +1,68 @@
+//---Classes------------------------------------------------------------------
+class Vehicle {
+    drive(): void {
+        console.log('Drive mode activated')
+    }
+    stop(): void {
+        console.log('Stop mode activated')
+    }
+}
+
+class Car extends Vehicle {
+    drive(): void {
+        console.log('Car drive mode activated')
+    }
+    parking(): void {
+        console.log('Car parking mode activated')
+    }
+}
+
+const vehicle = new Vehicle()
+vehicle.drive()
+vehicle.stop()
+
+const car = new Car()
+car.drive()
+car.stop()
+car.parking()
+
 //---Interfaces---------------------------------------------------------------
-interface Reportable {
-    summary(): string
-}
+// interface Reportable {
+//     summary(): string
+// }
 
-const printReport = (item: Reportable): void => {
-    console.log(item.summary())
-}
+// const printReport = (item: Reportable): void => {
+//     console.log(item.summary())
+// }
 
-const civic = {
-    name: 'Civic',
-    year: 2000,
-    broken: true,
-    summary() {
-        return `
-            Name: ${this.name}
-            Year: ${this.year}
-            Broken: ${this.broken}
-    `
-    }
-}
+// const civic = {
+//     name: 'Civic',
+//     year: 2000,
+//     broken: true,
+//     summary() {
+//         return `
+//             Name: ${this.name}
+//             Year: ${this.year}
+//             Broken: ${this.broken}
+//     `
+//     }
+// }
 
-const drink = {
-    color:'brown',
-    carbonated: true,
-    sugar: 40,
-    summary() {
-        return `
-            Drink color: ${this.color}
-            Drink carbonated: ${this.carbonated}
-            Sugar content: ${this.sugar}
-    `
-    }
-}
+// const drink = {
+//     color:'brown',
+//     carbonated: true,
+//     sugar: 40,
+//     summary() {
+//         return `
+//             Drink color: ${this.color}
+//             Drink carbonated: ${this.carbonated}
+//             Sugar content: ${this.sugar}
+//     `
+//     }
+// }
 
-printReport(civic)
-printReport(drink)
+// printReport(civic)
+// printReport(drink)
 
 //---Tuples-------------------------------------------------------------------
 // const drink = {
