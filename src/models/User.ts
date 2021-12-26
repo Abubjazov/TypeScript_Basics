@@ -16,6 +16,10 @@ export class User {
     }
 
     getObjMetaData(): string {
-        return this.name
+        return `
+        <div>
+            <h2>User name: ${this.name}</h2>
+        </div>
+        `
     }
 }

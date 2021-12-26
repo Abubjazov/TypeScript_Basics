@@ -18,6 +18,11 @@ export class Company {
     }
 
     getObjMetaData(): string {
-        return this.name + '\n' + this.catchFrase
+        return `
+        <div>
+            <h2>Company name: ${this.name}</h2>
+            <h3>Company catch frase: ${this.catchFrase}</h3>
+        </div>
+        `
     }
 }
