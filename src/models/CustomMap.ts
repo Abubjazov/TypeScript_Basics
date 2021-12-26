@@ -1,4 +1,9 @@
-import { Mappable } from '../interfaces/Mappable'
+interface Mappable {
+    location: {
+        lat: number
+        lng: number
+    }
+}
 
 export class CustomMap {
     private googleMap: google.maps.Map
@@ -14,12 +19,20 @@ export class CustomMap {
     }
 
     addMarker(mappabelObj: Mappable): void {
-        new google.maps.Marker({
+        const marker = new google.maps.Marker({
             map: this.googleMap,
             position: {
                 lat: mappabelObj.location.lat,
                 lng: mappabelObj.location.lng
             }
+        })
+
+        marker.addListener('click', (): void => {
+            const infoWindow = new google.maps.InfoWindow({
+                content: 'Hey!!! ))'
+            })
+
+            infoWindow.open(this.googleMap, marker)
         })
     }
 }
