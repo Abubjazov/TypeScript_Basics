@@ -14,4 +14,8 @@ export class User {
             lng: +faker.address.longitude()
         }
     }
+
+    getObjMetaData(): string {
+        return this.name
+    }
 }

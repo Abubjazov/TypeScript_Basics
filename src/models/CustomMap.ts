@@ -3,6 +3,7 @@ interface Mappable {
         lat: number
         lng: number
     }
+    getObjMetaData(): string
 }
 
 export class CustomMap {
@@ -29,7 +30,7 @@ export class CustomMap {
 
         marker.addListener('click', (): void => {
             const infoWindow = new google.maps.InfoWindow({
-                content: 'Hey!!! ))'
+                content: mappabelObj.getObjMetaData()
             })
 
             infoWindow.open(this.googleMap, marker)

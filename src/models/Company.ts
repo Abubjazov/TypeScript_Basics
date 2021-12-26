@@ -16,4 +16,8 @@ export class Company {
             lng: +faker.address.longitude()
         }
     }
+
+    getObjMetaData(): string {
+        return this.name + '\n' + this.catchFrase
+    }
 }
