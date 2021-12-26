@@ -1,5 +1,4 @@
-import { Company } from './Company'
-import { User } from './User'
+import { Mappable } from '../interfaces/Mappable'
 
 export class CustomMap {
     private googleMap: google.maps.Map
@@ -14,7 +13,7 @@ export class CustomMap {
         })
     }
 
-    addMarker(mappabelObj: User | Company): void {
+    addMarker(mappabelObj: Mappable): void {
         new google.maps.Marker({
             map: this.googleMap,
             position: {
