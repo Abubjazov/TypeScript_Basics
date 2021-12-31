@@ -47,6 +47,31 @@ function printAny<T>(arr: T[]): void {
 printAny<number>([1, 2, 3])
 printAny(['1', '2', '3'])
 
+
+//Generics Constraints
+class Human {
+    print() {
+        console.log('I am a human')
+    }
+}
+
+class Robot {
+    print() {
+        console.log('I am a robot')
+    }
+}
+
+interface Printable {
+    print(): void
+}
+
+function printAnyClass<T extends Printable>(arr: T[]): void {
+    arr.forEach(item => item.print())
+}
+
+printAnyClass<Human>([new Human(), new Human()])
+printAnyClass([new Human(), new Robot()])
+
 //---Classes------------------------------------------------------------------
 // class Vehicle {
 //     mode: string = 'Parking'
