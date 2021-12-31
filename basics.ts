@@ -1,4 +1,6 @@
 //---Generics-----------------------------------------------------------------
+
+//For Classes
 class ArrayOfNumbers {
     constructor(public collection: number[]) {}
 
@@ -25,6 +27,25 @@ class ArrayOfAny<T> {
 
 new ArrayOfAny<number>([1, 2, 3])
 new ArrayOfAny<string>(['1', '2', '3'])
+new ArrayOfAny(['1', '2', '3'])
+const arr = new ArrayOfAny([1, 2, 3])
+
+
+//For Fuctions
+function printString(strings: string[]): void {
+    strings.forEach((string: string) => console.log(string))
+}
+
+function printNumbers(numbers: number[]): void {
+    numbers.forEach((number: number) => console.log(number))
+}
+
+function printAny<T>(arr: T[]): void {
+    arr.forEach((item: T) => console.log(item))
+}
+
+printAny<number>([1, 2, 3])
+printAny(['1', '2', '3'])
 
 //---Classes------------------------------------------------------------------
 // class Vehicle {
