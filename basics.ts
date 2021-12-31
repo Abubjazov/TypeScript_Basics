@@ -1,68 +1,96 @@
+//---Generics-----------------------------------------------------------------
+class ArrayOfNumbers {
+    constructor(public collection: number[]) {}
+
+    get(idx: number): number {
+        return this.collection[idx]
+    }
+}
+
+class ArrayOfStrings {
+    constructor(public collection: string[]) {}
+
+    get(idx: number): string {
+        return this.collection[idx]
+    }
+}
+
+class ArrayOfAny<T> {
+    constructor(public collection: T[]) {}
+
+    get(idx: number): T {
+        return this.collection[idx]
+    }
+}
+
+new ArrayOfAny<number>([1, 2, 3])
+new ArrayOfAny<string>(['1', '2', '3'])
+
 //---Classes------------------------------------------------------------------
-class Vehicle {
-    mode: string = 'Parking'
-    // color: string
+// class Vehicle {
+//     mode: string = 'Parking'
+//     // color: string
 
-    // constructor(color: string) {
-    //     this.color = color
-    // }
+//     // constructor(color: string) {
+//     //     this.color = color
+//     // }
     
-    constructor(public color: string) {}
+//     constructor(public color: string) {}
 
-    protected print(): void {
-        console.log(`${this.mode} mode activated`)
-    }
+//     protected print(): void {
+//         console.log(`${this.mode} mode activated`)
+//     }
 
-    protected drive(): void {
-        this.mode = 'Drive'
-        this.print()
-    }
+//     protected drive(): void {
+//         this.mode = 'Drive'
+//         this.print()
+//     }
 
-    public stop(): void {
-        this.mode = 'Stop'
-        this.print()
-    }
+//     public stop(): void {
+//         this.mode = 'Stop'
+//         this.print()
+//     }
 
-    public parking(): void {
-        this.mode = 'Parking'
-        this.print()
-    }
+//     public parking(): void {
+//         this.mode = 'Parking'
+//         this.print()
+//     }
 
-    start() {
-        this.drive()
-    }
-}
+//     start() {
+//         this.drive()
+//     }
+// }
 
-class Car extends Vehicle {
-    constructor(public wheels: number, color: string) {
-        super(color)
-    }
+// class Car extends Vehicle {
+//     constructor(public wheels: number, color: string) {
+//         super(color)
+//     }
 
-    private beep(): void {
-        console.log('Beep')
-    }
+//     private beep(): void {
+//         console.log('Beep')
+//     }
 
-    startDrive(): void {
-        this.beep()
-        this.drive()
-    }
+//     startDrive(): void {
+//         this.beep()
+//         this.drive()
+//     }
 
-    public parking(): void {
-        console.log('Car parking mode activated')
-    }
-}
+//     public parking(): void {
+//         console.log('Car parking mode activated')
+//     }
+// }
 
-const vehicle = new Vehicle('red')
-vehicle.start()
-vehicle.stop()
-console.log(vehicle.color)
+// const vehicle = new Vehicle('red')
+// vehicle.start()
+// vehicle.stop()
+// console.log(vehicle.color)
 
-const car = new Car(4, 'silver')
-car.startDrive()
-car.stop()
-car.parking()
-console.log(car.color)
-console.log(car.wheels)
+// const car = new Car(4, 'silver')
+// car.startDrive()
+// car.stop()
+// car.parking()
+// console.log(car.color)
+// console.log(car.wheels)
 
 //---Interfaces---------------------------------------------------------------
 // interface Reportable {
