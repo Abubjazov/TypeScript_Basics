@@ -1,21 +1,28 @@
 //---Decorators---------------------------------------------------------------
 class Car {
-    @propDecorator
+    @propDec
     color: string = 'white'
 
+    @propDec
     get formattedColor(): string {
         return `This car color is: ${this.color}`
     }
 
     @logError('Car is crashed')
-    drive(): void {
-        throw new Error()
-        console.log('DRIVE')
+    drive(@paramDec speed: number): void {
+        if (speed > 90) {
+            console.log(`It's too fast`)
+        } else {
+            console.log(`It's OK`)
+        }
     }
 }
 
-function propDecorator(target: any, key: string) {
-    console.log(target)
+function paramDec(target: any, key: string, index: number) {
+    console.log(key, index)
+}
+
+function propDec(target: any, key: string) {
     console.log(key)
 }
 
