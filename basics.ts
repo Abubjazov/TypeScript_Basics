@@ -1,4 +1,5 @@
 //---Decorators---------------------------------------------------------------
+@classDec
 class Car {
     @propDec
     color: string = 'white'
@@ -16,6 +17,10 @@ class Car {
             console.log(`It's OK`)
         }
     }
+}
+
+function classDec(constructor: Function | typeof Car) {
+    console.log(constructor)
 }
 
 function paramDec(target: any, key: string, index: number) {
