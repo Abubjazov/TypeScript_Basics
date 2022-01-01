@@ -1,13 +1,11 @@
 //---Decorators---------------------------------------------------------------
 class Car {
     color: string = 'white'
-    
-    @testDecorator
+
     get formattedColor(): string {
         return `This car color is: ${this.color}`
     }
 
-    
     drive(): void {
         console.log('DRIVE')
     }
@@ -18,9 +16,7 @@ function testDecorator(target: any, key: string): void {
     console.log('Key:    ', key)
 }
 
-// const car = new Car()
-
-// car.drive()
+testDecorator(Car, 'drive')
 
 //---Generics-----------------------------------------------------------------
 
