@@ -1,5 +1,6 @@
 //---Decorators---------------------------------------------------------------
 class Car {
+    @propDecorator
     color: string = 'white'
 
     get formattedColor(): string {
@@ -11,6 +12,11 @@ class Car {
         throw new Error()
         console.log('DRIVE')
     }
+}
+
+function propDecorator(target: any, key: string) {
+    console.log(target)
+    console.log(key)
 }
 
 function logError(errMsg: string) {
@@ -27,8 +33,8 @@ function logError(errMsg: string) {
     }
 }
 
-const car = new Car()
-car.drive()
+// const car = new Car()
+// car.drive()
 
 //---Generics-----------------------------------------------------------------
 
