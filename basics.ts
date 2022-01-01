@@ -1,76 +1,100 @@
+//---Decorators---------------------------------------------------------------
+class Car {
+    color: string = 'white'
+    
+    @testDecorator
+    get formattedColor(): string {
+        return `This car color is: ${this.color}`
+    }
+
+    
+    drive(): void {
+        console.log('DRIVE')
+    }
+}
+
+function testDecorator(target: any, key: string): void {
+    console.log('Target: ', target)
+    console.log('Key:    ', key)
+}
+
+// const car = new Car()
+
+// car.drive()
+
 //---Generics-----------------------------------------------------------------
 
 //For Classes
-class ArrayOfNumbers {
-    constructor(public collection: number[]) {}
+// class ArrayOfNumbers {
+//     constructor(public collection: number[]) {}
 
-    get(idx: number): number {
-        return this.collection[idx]
-    }
-}
+//     get(idx: number): number {
+//         return this.collection[idx]
+//     }
+// }
 
-class ArrayOfStrings {
-    constructor(public collection: string[]) {}
+// class ArrayOfStrings {
+//     constructor(public collection: string[]) {}
 
-    get(idx: number): string {
-        return this.collection[idx]
-    }
-}
+//     get(idx: number): string {
+//         return this.collection[idx]
+//     }
+// }
 
-class ArrayOfAny<T> {
-    constructor(public collection: T[]) {}
+// class ArrayOfAny<T> {
+//     constructor(public collection: T[]) {}
 
-    get(idx: number): T {
-        return this.collection[idx]
-    }
-}
+//     get(idx: number): T {
+//         return this.collection[idx]
+//     }
+// }
 
-new ArrayOfAny<number>([1, 2, 3])
-new ArrayOfAny<string>(['1', '2', '3'])
-new ArrayOfAny(['1', '2', '3'])
-const arr = new ArrayOfAny([1, 2, 3])
+// new ArrayOfAny<number>([1, 2, 3])
+// new ArrayOfAny<string>(['1', '2', '3'])
+// new ArrayOfAny(['1', '2', '3'])
+// const arr = new ArrayOfAny([1, 2, 3])
 
 
-//For Fuctions
-function printString(strings: string[]): void {
-    strings.forEach((string: string) => console.log(string))
-}
+// //For Fuctions
+// function printString(strings: string[]): void {
+//     strings.forEach((string: string) => console.log(string))
+// }
 
-function printNumbers(numbers: number[]): void {
-    numbers.forEach((number: number) => console.log(number))
-}
+// function printNumbers(numbers: number[]): void {
+//     numbers.forEach((number: number) => console.log(number))
+// }
 
-function printAny<T>(arr: T[]): void {
-    arr.forEach((item: T) => console.log(item))
-}
+// function printAny<T>(arr: T[]): void {
+//     arr.forEach((item: T) => console.log(item))
+// }
 
-printAny<number>([1, 2, 3])
-printAny(['1', '2', '3'])
+// printAny<number>([1, 2, 3])
+// printAny(['1', '2', '3'])
 
 
 //Generics Constraints
-class Human {
-    print() {
-        console.log('I am a human')
-    }
-}
+// class Human {
+//     print() {
+//         console.log('I am a human')
+//     }
+// }
 
-class Robot {
-    print() {
-        console.log('I am a robot')
-    }
-}
+// class Robot {
+//     print() {
+//         console.log('I am a robot')
+//     }
+// }
 
-interface Printable {
-    print(): void
-}
+// interface Printable {
+//     print(): void
+// }
 
-function printAnyClass<T extends Printable>(arr: T[]): void {
-    arr.forEach(item => item.print())
-}
+// function printAnyClass<T extends Printable>(arr: T[]): void {
+//     arr.forEach(item => item.print())
+// }
 
-printAnyClass<Human>([new Human(), new Human()])
-printAnyClass([new Human(), new Robot()])
+// printAnyClass<Human>([new Human(), new Human()])
+// printAnyClass([new Human(), new Robot()])
 
 //---Classes------------------------------------------------------------------
 // class Vehicle {
