@@ -6,21 +6,22 @@ class Car {
         return `This car color is: ${this.color}`
     }
 
-    @logErr
+    @logError('Car is crashed')
     drive(): void {
-        // throw new Error()
+        throw new Error()
         console.log('DRIVE')
     }
 }
-
-function logErr(target: any, key: string, desc: PropertyDescriptor): void {
-    const method = desc.value
-
-    desc.value = function() {
-        try {
-            method()
-        } catch (error) {
-            console.log(error)
+function logError(errMsg: string) {
+    return function(target: any, key: string, desc: PropertyDescriptor): void {
+        const method = desc.value
+    
+        desc.value = function() {
+            try {
+                method()
+            } catch (error) {
+                console.log(errMsg)
+            }
         }
     }
 }
