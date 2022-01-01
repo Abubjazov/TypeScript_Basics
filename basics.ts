@@ -12,6 +12,7 @@ class Car {
         console.log('DRIVE')
     }
 }
+
 function logError(errMsg: string) {
     return function(target: any, key: string, desc: PropertyDescriptor): void {
         const method = desc.value
