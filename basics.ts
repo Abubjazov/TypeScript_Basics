@@ -6,17 +6,27 @@ class Car {
         return `This car color is: ${this.color}`
     }
 
+    @logErr
     drive(): void {
+        // throw new Error()
         console.log('DRIVE')
     }
 }
 
-function testDecorator(target: any, key: string): void {
-    console.log('Target: ', target)
-    console.log('Key:    ', key)
+function logErr(target: any, key: string, desc: PropertyDescriptor): void {
+    const method = desc.value
+
+    desc.value = function() {
+        try {
+            method()
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }
 
-testDecorator(Car, 'drive')
+const car = new Car()
+car.drive()
 
 //---Generics-----------------------------------------------------------------
 
