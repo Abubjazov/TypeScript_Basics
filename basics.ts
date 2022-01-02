@@ -1,18 +1,48 @@
-//---Metadata-----------------------------------------------------------------
+//---Metadata + Decorators----------------------------------------------------
 import 'reflect-metadata'
 
-const box = {
-    color: 'black'
+@printMetaData class Car {
+    color: string = 'black'
+
+    @markFunc(13)
+    drive(): void {
+        console.log('DRIVE')
+    }
 }
 
-Reflect.defineMetadata('note', 'hello', box)
-Reflect.defineMetadata('width', 300, box)
+function markFunc(param: number) { 
+    return function(target: Car, key: string) {
+        Reflect.defineMetadata('info', param, target, key)
+    }
+}
 
-Reflect.defineMetadata('scale', 1.5, box, 'color')
+// const info = Reflect.getMetadata('info', Car.prototype, 'drive')
+// console.log(info)
 
-console.log(Reflect.getMetadata('note', box))
-console.log(Reflect.getMetadata('width', box))
-console.log(Reflect.getMetadata('scale', box, 'color'))
+function printMetaData(target: typeof Car) {
+    for (let key in target.prototype) {
+        const info = Reflect.getMetadata('info', target.prototype, key)
+        console.log(info)
+        console.log('in')
+    }
+}
+
+//---Metadata-----------------------------------------------------------------
+// import 'reflect-metadata'
+
+// const box = {
+//     color: 'black'
+// }
+
+// Reflect.defineMetadata('note', 'hello', box)
+// Reflect.defineMetadata('width', 300, box)
+
+// Reflect.defineMetadata('scale', 1.5, box, 'color')
+
+// console.log(Reflect.getMetadata('note', box))
+// console.log(Reflect.getMetadata('width', box))
+
+// console.log(Reflect.getMetadata('scale', box, 'color'))
 
 //---Decorators---------------------------------------------------------------
 // @classDec
