@@ -1,49 +1,60 @@
+//---Metadata-----------------------------------------------------------------
+import 'reflect-metadata'
+
+const box = {
+    color: 'black'
+}
+
+Reflect.defineMetadata('note', 'hello', box)
+
+console.log(Reflect.getMetadata('note', box))
+
 //---Decorators---------------------------------------------------------------
-@classDec
-class Car {
-    @propDec
-    color: string = 'white'
+// @classDec
+// class Car {
+//     @propDec
+//     color: string = 'white'
 
-    @propDec
-    get formattedColor(): string {
-        return `This car color is: ${this.color}`
-    }
+//     @propDec
+//     get formattedColor(): string {
+//         return `This car color is: ${this.color}`
+//     }
 
-    @logError('Car is crashed')
-    drive(@paramDec speed: number): void {
-        if (speed > 90) {
-            console.log(`It's too fast`)
-        } else {
-            console.log(`It's OK`)
-        }
-    }
-}
+//     @logError('Car is crashed')
+//     drive(@paramDec speed: number): void {
+//         if (speed > 90) {
+//             console.log(`It's too fast`)
+//         } else {
+//             console.log(`It's OK`)
+//         }
+//     }
+// }
 
-function classDec(constructor: Function | typeof Car) {
-    console.log(constructor)
-}
+// function classDec(constructor: Function | typeof Car) {
+//     console.log(constructor)
+// }
 
-function paramDec(target: any, key: string, index: number) {
-    console.log(key, index)
-}
+// function paramDec(target: any, key: string, index: number) {
+//     console.log(key, index)
+// }
 
-function propDec(target: any, key: string) {
-    console.log(key)
-}
+// function propDec(target: any, key: string) {
+//     console.log(key)
+// }
 
-function logError(errMsg: string) {
-    return function(target: any, key: string, desc: PropertyDescriptor): void {
-        const method = desc.value
+// function logError(errMsg: string) {
+//     return function(target: any, key: string, desc: PropertyDescriptor): void {
+//         const method = desc.value
     
-        desc.value = function() {
-            try {
-                method()
-            } catch (error) {
-                console.log(errMsg)
-            }
-        }
-    }
-}
+//         desc.value = function() {
+//             try {
+//                 method()
+//             } catch (error) {
+//                 console.log(errMsg)
+//             }
+//         }
+//     }
+// }
 
 // const car = new Car()
 // car.drive()
