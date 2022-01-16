@@ -1,31 +1,91 @@
+//---Enums--------------------------------------------------------------------
+enum Direction {
+	Up = 'UP',
+	Down = 'DOWN',
+	Left = 'LEFT',
+	Right = 'RIGHT'
+}
+
+enum Decision {
+	Yes = 1,
+	No = calcEnum()
+}
+
+function calcEnum(): number {
+	 return 2
+}
+
+function runEnum(obj:{Up: string}) {
+	
+}
+
+runEnum(Direction)
+
+enum Test {
+	A,
+	B
+}
+
+let test = Test.A
+let nameA = Test[Test.A]
+
+const enum CE {
+	A,
+	B
+}
+
+let c = CE.B
+
+enum Dice {
+	one = 1,
+	two,
+	three
+}
+
+function runDice(dice: Dice) {
+	switch (dice) {
+		case Dice.one:
+			return 1
+
+		case Dice.two:
+			return 2
+
+		case Dice.three:
+			return 2
+	
+		default:
+			const a: never = dice
+	}
+}
+
 //---Metadata + Decorators----------------------------------------------------
-import 'reflect-metadata'
+// import 'reflect-metadata'
 
-@printMetaData class Car {
-    color: string = 'black'
+// @printMetaData class Car {
+//     color: string = 'black'
 
-    @markFunc(13)
-    drive(): void {
-        console.log('DRIVE')
-    }
-}
+//     @markFunc(13)
+//     drive(): void {
+//         console.log('DRIVE')
+//     }
+// }
 
-function markFunc(param: number) { 
-    return function(target: Car, key: string) {
-        Reflect.defineMetadata('info', param, target, key)
-    }
-}
+// function markFunc(param: number) { 
+//     return function(target: Car, key: string) {
+//         Reflect.defineMetadata('info', param, target, key)
+//     }
+// }
 
 // const info = Reflect.getMetadata('info', Car.prototype, 'drive')
 // console.log(info)
 
-function printMetaData(target: typeof Car) {
-    for (let key in target.prototype) {
-        const info = Reflect.getMetadata('info', target.prototype, key)
-        console.log(info)
-        console.log('in')
-    }
-}
+// function printMetaData(target: typeof Car) {
+//     for (let key in target.prototype) {
+//         const info = Reflect.getMetadata('info', target.prototype, key)
+//         console.log(info)
+//         console.log('in')
+//     }
+// }
 
 //---Metadata-----------------------------------------------------------------
 // import 'reflect-metadata'
