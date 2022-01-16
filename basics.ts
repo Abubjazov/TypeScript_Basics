@@ -1,62 +1,93 @@
+//---Generics-----------------------------------------------------------------
+function logTime<T>(num: T): T {
+	console.log(new Date())
+
+	return num
+}
+
+logTime<string>('a')
+logTime<number>(1)
+
+interface MyInterface {
+	transform: <T, F>(a: T) => F
+}
+
+class MyClass<T> {
+	value!: T
+}
+
+const a = new MyClass<number>()
+a.value
+
+interface TimeStamp {
+	stamp: number
+}
+
+function logTimeStamp<T extends TimeStamp>(num: T): T {
+	console.log(num.stamp)
+
+	return num
+}
+
 //---Enums--------------------------------------------------------------------
-enum Direction {
-	Up = 'UP',
-	Down = 'DOWN',
-	Left = 'LEFT',
-	Right = 'RIGHT'
-}
+// enum Direction {
+// 	Up = 'UP',
+// 	Down = 'DOWN',
+// 	Left = 'LEFT',
+// 	Right = 'RIGHT'
+// }
 
-enum Decision {
-	Yes = 1,
-	No = calcEnum()
-}
+// enum Decision {
+// 	Yes = 1,
+// 	No = calcEnum()
+// }
 
-function calcEnum(): number {
-	 return 2
-}
+// function calcEnum(): number {
+// 	 return 2
+// }
 
-function runEnum(obj:{Up: string}) {
+// function runEnum(obj:{Up: string}) {
 	
-}
+// }
 
-runEnum(Direction)
+// runEnum(Direction)
 
-enum Test {
-	A,
-	B
-}
+// enum Test {
+// 	A,
+// 	B
+// }
 
-let test = Test.A
-let nameA = Test[Test.A]
+// let test = Test.A
+// let nameA = Test[Test.A]
 
-const enum CE {
-	A,
-	B
-}
+// const enum CE {
+// 	A,
+// 	B
+// }
 
-let c = CE.B
+// let c = CE.B
 
-enum Dice {
-	one = 1,
-	two,
-	three
-}
+// enum Dice {
+// 	one = 1,
+// 	two,
+// 	three
+// }
 
-function runDice(dice: Dice) {
-	switch (dice) {
-		case Dice.one:
-			return 1
+// function runDice(dice: Dice) {
+// 	switch (dice) {
+// 		case Dice.one:
+// 			return 1
 
-		case Dice.two:
-			return 2
+// 		case Dice.two:
+// 			return 2
 
-		case Dice.three:
-			return 2
+// 		case Dice.three:
+// 			return 2
 	
-		default:
-			const a: never = dice
-	}
-}
+// 		default:
+// 			const a: never = dice
+// 	}
+// }
 
 //---Metadata + Decorators----------------------------------------------------
 // import 'reflect-metadata'
