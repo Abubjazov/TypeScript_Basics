@@ -1,18 +1,3 @@
-//Array Type
-let list: number[] = [1, 2, 3]
-let list2: Array<number> = [1, 2, 3]
-
-//Tuple
-let tuple: [string, number] = ['hello', 13]
-// tuple = [13, 'string']
-let y: [any, any] = ['string', 10]
-let z: Array<any> = ['string', 10]
-
-let notSure: any = false
-notSure = true
-notSure = 13
-notSure = 'string'
-
 //Enum
 enum Directions {
 	Up,
@@ -26,44 +11,87 @@ console.log(Directions.Down)
 console.log(Directions.Left)
 console.log(Directions.Right)
 
-enum Directions2 {
-	Up = 2,
-	Down = 'S',
-	Left = 6,
-	Right,
+console.log(Directions[0])
+console.log(Directions[1])
+console.log(Directions[2])
+console.log(Directions[3])
+
+enum links {
+	youtube = 'https://www.youtube.com/',
+	hh = 'https://kazan.hh.ru/',
+	github = 'https://github.com/',
 }
 
-console.log(Directions2.Up)
-console.log(Directions2.Down)
-console.log(Directions2.Left)
-console.log(Directions2.Right)
+console.log(links.github)
+console.log(links.hh)
+console.log(links.youtube)
 
-//Never
-const msg = 'hello'
-const error = (msg: string): never => {
-	throw new Error()
-}
+// //Array Type
+// let list: number[] = [1, 2, 3]
+// let list2: Array<number> = [1, 2, 3]
 
-const infiniteLoop = (): never => {
-	while (true) {}
-}
+// //Tuple
+// let tuple: [string, number] = ['hello', 13]
+// // tuple = [13, 'string']
+// let y: [any, any] = ['string', 10]
+// let z: Array<any> = ['string', 10]
 
-//Object
-const create = (o: object | null): void => {}
-// create(1)
-// create('s')
-create([0])
-create({ o: 0 })
-create(null)
+// let notSure: any = false
+// notSure = true
+// notSure = 13
+// notSure = 'string'
 
-//Type
-type Name = string | number
+// //Enum
+// enum Directions {
+// 	Up,
+// 	Down,
+// 	Left,
+// 	Right,
+// }
 
-let id: Name
+// console.log(Directions.Up)
+// console.log(Directions.Down)
+// console.log(Directions.Left)
+// console.log(Directions.Right)
 
-id = 43
-id = 's'
-// id = [0]
+// enum Directions2 {
+// 	Up = 2,
+// 	Down = 'S',
+// 	Left = 6,
+// 	Right,
+// }
+
+// console.log(Directions2.Up)
+// console.log(Directions2.Down)
+// console.log(Directions2.Left)
+// console.log(Directions2.Right)
+
+// //Never
+// const msg = 'hello'
+// const error = (msg: string): never => {
+// 	throw new Error()
+// }
+
+// const infiniteLoop = (): never => {
+// 	while (true) {}
+// }
+
+// //Object
+// const create = (o: object | null): void => {}
+// // create(1)
+// // create('s')
+// create([0])
+// create({ o: 0 })
+// create(null)
+
+// //Type
+// type Name = string | number
+
+// let id: Name
+
+// id = 43
+// id = 's'
+// // id = [0]
 
 //---Generics-----------------------------------------------------------------
 // function logTime<T>(num: T): T {
