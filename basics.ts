@@ -1,30 +1,52 @@
-//Enum
-enum Directions {
-	Up,
-	Down,
-	Left,
-	Right,
+//Functions
+const createPassword = (
+	name: string = 'string',
+	age: number | string = 13
+): string => `${name}${age}${name}`
+const createPassword2 = (name: string = 'string', age?: number): string =>
+	`${name}${age}${name}`
+
+const createSkills = (name: string, ...skills: string[]): string =>
+	`${name} my skills: ${skills.join()}`
+
+createSkills('Radik', 'JS', 'React')
+
+//legacy func case
+let myFunc: (firstArg: string) => void
+
+function oldFunc(name: string): void {
+	alert(`Hello ${name}, nice to see you! )`)
 }
 
-console.log(Directions.Up)
-console.log(Directions.Down)
-console.log(Directions.Left)
-console.log(Directions.Right)
+myFunc = oldFunc
 
-console.log(Directions[0])
-console.log(Directions[1])
-console.log(Directions[2])
-console.log(Directions[3])
+// //Enum
+// enum Directions {
+// 	Up,
+// 	Down,
+// 	Left,
+// 	Right,
+// }
 
-enum links {
-	youtube = 'https://www.youtube.com/',
-	hh = 'https://kazan.hh.ru/',
-	github = 'https://github.com/',
-}
+// console.log(Directions.Up)
+// console.log(Directions.Down)
+// console.log(Directions.Left)
+// console.log(Directions.Right)
 
-console.log(links.github)
-console.log(links.hh)
-console.log(links.youtube)
+// console.log(Directions[0])
+// console.log(Directions[1])
+// console.log(Directions[2])
+// console.log(Directions[3])
+
+// enum links {
+// 	youtube = 'https://www.youtube.com/',
+// 	hh = 'https://kazan.hh.ru/',
+// 	github = 'https://github.com/',
+// }
+
+// console.log(links.github)
+// console.log(links.hh)
+// console.log(links.youtube)
 
 // //Array Type
 // let list: number[] = [1, 2, 3]
