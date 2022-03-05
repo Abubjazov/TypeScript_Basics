@@ -1,33 +1,91 @@
+//Array Type
+let list: number[] = [1, 2, 3]
+let list2: Array<number> = [1, 2, 3]
+
+//Tuple
+let tuple: [string, number] = ['hello', 13]
+// tuple = [13, 'string']
+let y: [any, any] = ['string', 10]
+let z: Array<any> = ['string', 10]
+
+let notSure: any = false
+notSure = true
+notSure = 13
+notSure = 'string'
+
+//Enum
+enum Directions {
+	Up,
+	Down,
+	Left,
+	Right,
+}
+
+console.log(Directions.Up)
+console.log(Directions.Down)
+console.log(Directions.Left)
+console.log(Directions.Right)
+
+enum Directions2 {
+	Up = 2,
+	Down = 'S',
+	Left = 6,
+	Right,
+}
+
+console.log(Directions2.Up)
+console.log(Directions2.Down)
+console.log(Directions2.Left)
+console.log(Directions2.Right)
+
+//Never
+const msg = 'hello'
+const error = (msg: string): never => {
+	throw new Error()
+}
+
+const infiniteLoop = (): never => {
+	while (true) {}
+}
+
+//Object
+const create = (o: object | null): void => {}
+create(1)
+create('s')
+create([0])
+create({ o: 0 })
+create(null)
+
 //---Generics-----------------------------------------------------------------
-function logTime<T>(num: T): T {
-	console.log(new Date())
+// function logTime<T>(num: T): T {
+// 	console.log(new Date())
 
-	return num
-}
+// 	return num
+// }
 
-logTime<string>('a')
-logTime<number>(1)
+// logTime<string>('a')
+// logTime<number>(1)
 
-interface MyInterface {
-	transform: <T, F>(a: T) => F
-}
+// interface MyInterface {
+// 	transform: <T, F>(a: T) => F
+// }
 
-class MyClass<T> {
-	value!: T
-}
+// class MyClass<T> {
+// 	value!: T
+// }
 
-const a = new MyClass<number>()
-a.value
+// const a = new MyClass<number>()
+// a.value
 
-interface TimeStamp {
-	stamp: number
-}
+// interface TimeStamp {
+// 	stamp: number
+// }
 
-function logTimeStamp<T extends TimeStamp>(num: T): T {
-	console.log(num.stamp)
+// function logTimeStamp<T extends TimeStamp>(num: T): T {
+// 	console.log(num.stamp)
 
-	return num
-}
+// 	return num
+// }
 
 //---Enums--------------------------------------------------------------------
 // enum Direction {
@@ -217,7 +275,6 @@ function logTimeStamp<T extends TimeStamp>(num: T): T {
 // new ArrayOfAny(['1', '2', '3'])
 // const arr = new ArrayOfAny([1, 2, 3])
 
-
 // //For Fuctions
 // function printString(strings: string[]): void {
 //     strings.forEach((string: string) => console.log(string))
@@ -233,7 +290,6 @@ function logTimeStamp<T extends TimeStamp>(num: T): T {
 
 // printAny<number>([1, 2, 3])
 // printAny(['1', '2', '3'])
-
 
 //Generics Constraints
 // class Human {
@@ -380,7 +436,6 @@ function logTimeStamp<T extends TimeStamp>(num: T): T {
 
 // cola[1] = true
 
-
 // const carSpecs: [number, number] = [400, 3354]
 
 // const carSpecsObj = {
@@ -418,8 +473,6 @@ function logTimeStamp<T extends TimeStamp>(num: T): T {
 // impotantDates2.push('2021-11-11')
 // impotantDates2.push(13)
 
-
-
 //---Type Annotations Obj's----------------------------------------------
 // const profile = {
 //     name: 'Jack',
@@ -436,8 +489,6 @@ function logTimeStamp<T extends TimeStamp>(num: T): T {
 // const {age}: {age: number} = profile
 
 // const {coordinates: {lat, lng}}: {coordinates: {lat: number, lng: number}} = profile
-
-
 
 //---Type Annotations Func's----------------------------------------------
 // const addNumbers = (a: number, b: number): number => {
@@ -474,7 +525,6 @@ function logTimeStamp<T extends TimeStamp>(num: T): T {
 // }
 
 // logWeather(forecastToday)
-
 
 //---Type Annotations-----------------------------------------------------
 // let oranges: number = 5
