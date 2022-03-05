@@ -14,18 +14,28 @@ let admin: { name: string; age: number } = {
 	age: 35,
 }
 
-type User = { name: string; age: number }
+type User = {
+	name: string
+	age: number
+	nickName?: string
+	getPass?: () => string
+}
 
 let admin0: User = {
 	name: 'Admin',
 	age: 35,
+	nickName: 'adam',
 }
 
 let user3: User = {
 	name: 'Radik',
 	age: 31,
+	getPass(): string {
+		return `${this.name}${this.age}${this.name}`
+	},
 }
 
+console.log(user3.getPass ? user3.getPass() : 'string')
 //Functions
 // const createPassword = (
 // 	name: string = 'string',
