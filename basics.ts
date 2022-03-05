@@ -47,7 +47,7 @@ function logTimeStamp<T extends TimeStamp>(num: T): T {
 // }
 
 // function runEnum(obj:{Up: string}) {
-	
+
 // }
 
 // runEnum(Direction)
@@ -83,7 +83,7 @@ function logTimeStamp<T extends TimeStamp>(num: T): T {
 
 // 		case Dice.three:
 // 			return 2
-	
+
 // 		default:
 // 			const a: never = dice
 // 	}
@@ -101,7 +101,7 @@ function logTimeStamp<T extends TimeStamp>(num: T): T {
 //     }
 // }
 
-// function markFunc(param: number) { 
+// function markFunc(param: number) {
 //     return function(target: Car, key: string) {
 //         Reflect.defineMetadata('info', param, target, key)
 //     }
@@ -171,7 +171,7 @@ function logTimeStamp<T extends TimeStamp>(num: T): T {
 // function logError(errMsg: string) {
 //     return function(target: any, key: string, desc: PropertyDescriptor): void {
 //         const method = desc.value
-    
+
 //         desc.value = function() {
 //             try {
 //                 method()
@@ -267,7 +267,7 @@ function logTimeStamp<T extends TimeStamp>(num: T): T {
 //     // constructor(color: string) {
 //     //     this.color = color
 //     // }
-    
+
 //     constructor(public color: string) {}
 
 //     protected print(): void {
@@ -441,7 +441,7 @@ function logTimeStamp<T extends TimeStamp>(num: T): T {
 
 //---Type Annotations Func's----------------------------------------------
 // const addNumbers = (a: number, b: number): number => {
-//     return a + b 
+//     return a + b
 // }
 
 // const subNumbers = (a: number, b: number): number => {
@@ -554,7 +554,7 @@ function logTimeStamp<T extends TimeStamp>(num: T): T {
 
 //     console.log(`
 //         The Todo with ID: ${id}
-//         Has title: ${title} 
+//         Has title: ${title}
 //         Is finished: ${completed}
 //     `)
 // }
