@@ -29,6 +29,35 @@ const user0 = new User0('UserNick0', 'UserName0')
 console.log(user0.nickName)
 console.log(user0.passwd)
 
+class User1 {
+	constructor(public nickName: string, private age: number) {}
+
+	setMyAge(age: number): void {
+		this.age = age
+	}
+
+	getMyAge(): number {
+		return this.age
+	}
+
+	set myAge(age: number) {
+		this.age = age
+	}
+
+	get myAge(): number {
+		return this.age
+	}
+}
+
+const user1 = new User1('UserNick1', 31)
+
+console.log(user1.nickName)
+console.log(user1.getMyAge())
+user1.setMyAge(20)
+console.log(user1.myAge)
+user1.myAge = 18
+console.log(user1.getMyAge())
+
 //Objects
 // let user0: any = {
 // 	name: 'Radik',
