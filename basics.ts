@@ -1,24 +1,52 @@
-//Functions
-const createPassword = (
-	name: string = 'string',
-	age: number | string = 13
-): string => `${name}${age}${name}`
-const createPassword2 = (name: string = 'string', age?: number): string =>
-	`${name}${age}${name}`
-
-const createSkills = (name: string, ...skills: string[]): string =>
-	`${name} my skills: ${skills.join()}`
-
-createSkills('Radik', 'JS', 'React')
-
-//legacy func case
-let myFunc: (firstArg: string) => void
-
-function oldFunc(name: string): void {
-	alert(`Hello ${name}, nice to see you! )`)
+//Objects
+let user0: any = {
+	name: 'Radik',
+	age: 31,
 }
 
-myFunc = oldFunc
+let user1: { name: string; age: number } = {
+	name: 'Radik',
+	age: 31,
+}
+
+let admin: { name: string; age: number } = {
+	name: 'Admin',
+	age: 35,
+}
+
+type User = { name: string; age: number }
+
+let admin0: User = {
+	name: 'Admin',
+	age: 35,
+}
+
+let user3: User = {
+	name: 'Radik',
+	age: 31,
+}
+
+//Functions
+// const createPassword = (
+// 	name: string = 'string',
+// 	age: number | string = 13
+// ): string => `${name}${age}${name}`
+// const createPassword2 = (name: string = 'string', age?: number): string =>
+// 	`${name}${age}${name}`
+
+// const createSkills = (name: string, ...skills: string[]): string =>
+// 	`${name} my skills: ${skills.join()}`
+
+// createSkills('Radik', 'JS', 'React')
+
+// //legacy func case
+// let myFunc: (firstArg: string) => void
+
+// function oldFunc(name: string): void {
+// 	alert(`Hello ${name}, nice to see you! )`)
+// }
+
+// myFunc = oldFunc
 
 // //Enum
 // enum Directions {
