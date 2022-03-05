@@ -2,20 +2,32 @@
 class User {
 	public nickName: string
 	private name: string
-	protected age: number
-	readonly passwd: string
+	protected age: number = 20
+	readonly passwd: string = 'passwd'
 
-	constructor(nickName: string, name: string, age: number, passwd: string) {
+	constructor(nickName: string, name: string) {
 		this.nickName = nickName
 		this.name = name
-		this.age = age
-		this.passwd = passwd
 	}
 }
 
-const user = new User('UserNick', 'UserName', 31, 'passwd')
+const user = new User('UserNick', 'UserName')
 
 console.log(user.passwd)
+
+class User0 {
+	constructor(
+		public nickName: string,
+		private name: string,
+		protected age: number = 20,
+		readonly passwd: string = 'passwd0'
+	) {}
+}
+
+const user0 = new User0('UserNick0', 'UserName0')
+
+console.log(user0.nickName)
+console.log(user0.passwd)
 
 //Objects
 // let user0: any = {
