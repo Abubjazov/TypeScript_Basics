@@ -1,41 +1,61 @@
+//Classes
+class User {
+	public nickName: string
+	private name: string
+	protected age: number
+	readonly passwd: string
+
+	constructor(nickName: string, name: string, age: number, passwd: string) {
+		this.nickName = nickName
+		this.name = name
+		this.age = age
+		this.passwd = passwd
+	}
+}
+
+const user = new User('UserNick', 'UserName', 31, 'passwd')
+
+console.log(user.passwd)
+
 //Objects
-let user0: any = {
-	name: 'Radik',
-	age: 31,
-}
+// let user0: any = {
+// 	name: 'Radik',
+// 	age: 31,
+// }
 
-let user1: { name: string; age: number } = {
-	name: 'Radik',
-	age: 31,
-}
+// let user1: { name: string; age: number } = {
+// 	name: 'Radik',
+// 	age: 31,
+// }
 
-let admin: { name: string; age: number } = {
-	name: 'Admin',
-	age: 35,
-}
+// let admin: { name: string; age: number } = {
+// 	name: 'Admin',
+// 	age: 35,
+// }
 
-type User = {
-	name: string
-	age: number
-	nickName?: string
-	getPass?: () => string
-}
+// type User = {
+// 	name: string
+// 	age: number
+// 	nickName?: string
+// 	getPass?: () => string
+// }
 
-let admin0: User = {
-	name: 'Admin',
-	age: 35,
-	nickName: 'adam',
-}
+// let admin0: User = {
+// 	name: 'Admin',
+// 	age: 35,
+// 	nickName: 'adam',
+// }
 
-let user3: User = {
-	name: 'Radik',
-	age: 31,
-	getPass(): string {
-		return `${this.name}${this.age}${this.name}`
-	},
-}
+// let user3: User = {
+// 	name: 'Radik',
+// 	age: 31,
+// 	getPass(): string {
+// 		return `${this.name}${this.age}${this.name}`
+// 	},
+// }
 
-console.log(user3.getPass ? user3.getPass() : 'string')
+// console.log(user3.getPass ? user3.getPass() : 'string')
+
 //Functions
 // const createPassword = (
 // 	name: string = 'string',
