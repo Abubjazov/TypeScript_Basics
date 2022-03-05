@@ -50,11 +50,20 @@ const infiniteLoop = (): never => {
 
 //Object
 const create = (o: object | null): void => {}
-create(1)
-create('s')
+// create(1)
+// create('s')
 create([0])
 create({ o: 0 })
 create(null)
+
+//Type
+type Name = string | number
+
+let id: Name
+
+id = 43
+id = 's'
+// id = [0]
 
 //---Generics-----------------------------------------------------------------
 // function logTime<T>(num: T): T {
