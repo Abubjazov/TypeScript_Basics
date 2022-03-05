@@ -1,62 +1,72 @@
-//Classes
+//Inheritance
+//Static
 class User {
-	public nickName: string
-	private name: string
-	protected age: number = 20
-	readonly passwd: string = 'passwd'
+	static secret = 12345678
 
-	constructor(nickName: string, name: string) {
-		this.nickName = nickName
-		this.name = name
-	}
+	constructor(public name: string, public age: number) {}
 }
 
-const user = new User('UserNick', 'UserName')
+console.log(User.secret)
 
-console.log(user.passwd)
+//Classes
+// class User {
+// 	public nickName: string
+// 	private name: string
+// 	protected age: number = 20
+// 	readonly passwd: string = 'passwd'
 
-class User0 {
-	constructor(
-		public nickName: string,
-		private name: string,
-		protected age: number = 20,
-		readonly passwd: string = 'passwd0'
-	) {}
-}
+// 	constructor(nickName: string, name: string) {
+// 		this.nickName = nickName
+// 		this.name = name
+// 	}
+// }
 
-const user0 = new User0('UserNick0', 'UserName0')
+// const user = new User('UserNick', 'UserName')
 
-console.log(user0.nickName)
-console.log(user0.passwd)
+// console.log(user.passwd)
 
-class User1 {
-	constructor(public nickName: string, private age: number) {}
+// class User0 {
+// 	constructor(
+// 		public nickName: string,
+// 		private name: string,
+// 		protected age: number = 20,
+// 		readonly passwd: string = 'passwd0'
+// 	) {}
+// }
 
-	setMyAge(age: number): void {
-		this.age = age
-	}
+// const user0 = new User0('UserNick0', 'UserName0')
 
-	getMyAge(): number {
-		return this.age
-	}
+// console.log(user0.nickName)
+// console.log(user0.passwd)
 
-	set myAge(age: number) {
-		this.age = age
-	}
+// class User1 {
+// 	constructor(public nickName: string, private age: number) {}
 
-	get myAge(): number {
-		return this.age
-	}
-}
+// 	setMyAge(age: number): void {
+// 		this.age = age
+// 	}
 
-const user1 = new User1('UserNick1', 31)
+// 	getMyAge(): number {
+// 		return this.age
+// 	}
 
-console.log(user1.nickName)
-console.log(user1.getMyAge())
-user1.setMyAge(20)
-console.log(user1.myAge)
-user1.myAge = 18
-console.log(user1.getMyAge())
+// 	set myAge(age: number) {
+// 		this.age = age
+// 	}
+
+// 	get myAge(): number {
+// 		return this.age
+// 	}
+// }
+
+// const user1 = new User1('UserNick1', 31)
+
+// console.log(user1.nickName)
+// console.log(user1.getMyAge())
+// user1.setMyAge(20)
+// console.log(user1.myAge)
+// user1.myAge = 18
+// console.log(user1.getMyAge())
 
 //Objects
 // let user0: any = {
