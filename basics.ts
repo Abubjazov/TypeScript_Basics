@@ -1,12 +1,19 @@
+//Namespaces & Modules
+const SECRET: string = '12345678'
+const Pi: number = 3.14
+
+const getPass = (name: string, age: number): string => `${name} ${age}`
+const isEmpty = <T>(data: T): boolean => !data
+
 //Inheritance
 //Static
-class User {
-	static secret = 12345678
+// class User {
+// 	static secret = 12345678
 
-	constructor(public name: string, public age: number) {}
-}
+// 	constructor(public name: string, public age: number) {}
+// }
 
-console.log(User.secret)
+// console.log(User.secret)
 
 //Classes
 // class User {
