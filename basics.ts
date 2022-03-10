@@ -2,6 +2,9 @@
 interface User {
 	readonly name: string
 	age: number
+}
+
+interface Pass {
 	getPass(): string
 }
 
@@ -12,7 +15,7 @@ interface User {
 // 	someProp2: 13,
 // }
 
-class Admin implements User {
+class Admin implements User, Pass {
 	name: string = 'admin'
 	age: number = 31
 	nickName: string = 'Nic'
