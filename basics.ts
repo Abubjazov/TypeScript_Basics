@@ -1,6 +1,6 @@
 //Interfaces
 interface User {
-	name: string
+	readonly name: string
 	age: number
 	email?: string
 }
