@@ -10,7 +10,13 @@ function getter3<T>(data: T): T {
 } //ES 5
 
 getter2(13).length
-getter('test').length
+getter3('test').length
+
+getter2<number>(31).length
+getter3<string>('test').length
+
+const list: Array<number> = [1, 2, 3]
+
 //Interfaces
 // interface User {
 // 	readonly name: string
