@@ -3,11 +3,14 @@ interface User {
 	readonly name: string
 	age: number
 	email?: string
+	[propName: string]: any
 }
 
 const user1: User = {
 	name: 'username',
 	age: 31,
+	someProp: false,
+	someProp2: 13,
 }
 
 //Namespaces & Modules
