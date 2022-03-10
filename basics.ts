@@ -10,7 +10,16 @@ const logProperty = (target: Object, propertyKey: string | symbol) => {
 	console.log(propertyKey)
 }
 
-// @logClass
+//methodDecorator
+const logMethod = (
+	target: Object,
+	propertyKey: string | symbol,
+	descriptor: PropertyDescriptor
+) => {
+	console.log(propertyKey)
+}
+
+@logClass
 class User {
 	@logProperty
 	secret: number
@@ -19,6 +28,7 @@ class User {
 		this.secret = secret
 	}
 
+	@logMethod
 	public getPass(): string {
 		return `${this.name}${this.age}${this.name}`
 	}
