@@ -4,7 +4,7 @@ interface User {
 	age: number
 }
 
-interface Pass {
+interface SuperUser extends User {
 	getPass(): string
 }
 
@@ -15,7 +15,7 @@ interface Pass {
 // 	someProp2: 13,
 // }
 
-class Admin implements User, Pass {
+class Admin implements SuperUser {
 	name: string = 'admin'
 	age: number = 31
 	nickName: string = 'Nic'
