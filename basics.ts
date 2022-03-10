@@ -1,4 +1,11 @@
 //Decorators
+
+//Decorator
+const logClass = (constructor: Function) => {
+	console.log(constructor)
+}
+
+@logClass
 class User {
 	constructor(public name: string, public age: number) {}
 
@@ -6,9 +13,6 @@ class User {
 		return `${this.name}${this.age}${this.name}`
 	}
 }
-
-//Decorator: Base structure
-const logClass = () => ()
 
 //Generics
 // const getter = (data: any): any => data
