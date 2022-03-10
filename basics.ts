@@ -1,13 +1,25 @@
-//Namespaces & Modules
-namespace Utils {
-	export const SECRET: string = '12345678'
-	const Pi: number = 3.14
-
-	export const getPass = (name: string, age: number): string => `${name} ${age}`
-	export const isEmpty = <T>(data: T): boolean => !data
+//Interfaces
+interface User {
+	name: string
+	age: number
+	email?: string
 }
 
-const mySecret = Utils.SECRET
+const user1: User = {
+	name: 'username',
+	age: 31,
+}
+
+//Namespaces & Modules
+// namespace Utils {
+// 	export const SECRET: string = '12345678'
+// 	const Pi: number = 3.14
+
+// 	export const getPass = (name: string, age: number): string => `${name} ${age}`
+// 	export const isEmpty = <T>(data: T): boolean => !data
+// }
+
+// const mySecret = Utils.SECRET
 
 //Inheritance
 //Static
