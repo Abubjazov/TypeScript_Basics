@@ -2,15 +2,24 @@
 interface User {
 	readonly name: string
 	age: number
-	email?: string
-	[propName: string]: any
+	getPass(): string
 }
 
-const user1: User = {
-	name: 'username',
-	age: 31,
-	someProp: false,
-	someProp2: 13,
+// const user1: User = {
+// 	name: 'username',
+// 	age: 31,
+// 	someProp: false,
+// 	someProp2: 13,
+// }
+
+class Admin implements User {
+	name: string = 'admin'
+	age: number = 31
+	nickName: string = 'Nic'
+
+	getPass(): string {
+		return `${this.name}${this.age}${this.name}`
+	}
 }
 
 //Namespaces & Modules
