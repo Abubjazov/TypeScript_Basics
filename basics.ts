@@ -17,6 +17,18 @@ getter3<string>('test').length
 
 const list: Array<number> = [1, 2, 3]
 
+class User<T, K extends number> {
+	constructor(public name: T, public age: K) {}
+
+	public getPass(): string {
+		return `${this.name}${this.age}${this.name}`
+	}
+
+	public getSecret(): number {
+		return this.age ** 2
+	}
+}
+
 //Interfaces
 // interface User {
 // 	readonly name: string
