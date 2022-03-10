@@ -1,13 +1,23 @@
 //Decorators
 
-//Decorator
+//classDecorator
 const logClass = (constructor: Function) => {
 	console.log(constructor)
 }
 
-@logClass
+//propertyDecorator
+const logProperty = (target: Object, propertyKey: string | symbol) => {
+	console.log(propertyKey)
+}
+
+// @logClass
 class User {
-	constructor(public name: string, public age: number) {}
+	@logProperty
+	secret: number
+
+	constructor(public name: string, public age: number, secret: number) {
+		this.secret = secret
+	}
 
 	public getPass(): string {
 		return `${this.name}${this.age}${this.name}`
