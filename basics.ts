@@ -1,12 +1,25 @@
-//Interfaces
-interface User {
-	readonly name: string
-	age: number
-}
+//Generics
+const getter = (data: any): any => data
 
-interface SuperUser extends User {
-	getPass(): string
-}
+getter(13).length //undefined
+getter('test').length //4
+
+const getter2 = <T>(data: T): T => data //ES 6
+function getter3<T>(data: T): T {
+	return data
+} //ES 5
+
+getter2(13).length
+getter('test').length
+//Interfaces
+// interface User {
+// 	readonly name: string
+// 	age: number
+// }
+
+// interface SuperUser extends User {
+// 	getPass(): string
+// }
 
 // const user1: User = {
 // 	name: 'username',
@@ -15,15 +28,15 @@ interface SuperUser extends User {
 // 	someProp2: 13,
 // }
 
-class Admin implements SuperUser {
-	name: string = 'admin'
-	age: number = 31
-	nickName: string = 'Nic'
+// class Admin implements SuperUser {
+// 	name: string = 'admin'
+// 	age: number = 31
+// 	nickName: string = 'Nic'
 
-	getPass(): string {
-		return `${this.name}${this.age}${this.name}`
-	}
-}
+// 	getPass(): string {
+// 		return `${this.name}${this.age}${this.name}`
+// 	}
+// }
 
 //Namespaces & Modules
 // namespace Utils {
