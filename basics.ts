@@ -1,33 +1,45 @@
-//Generics
-const getter = (data: any): any => data
-
-getter(13).length //undefined
-getter('test').length //4
-
-const getter2 = <T>(data: T): T => data //ES 6
-function getter3<T>(data: T): T {
-	return data
-} //ES 5
-
-getter2(13).length
-getter3('test').length
-
-getter2<number>(31).length
-getter3<string>('test').length
-
-const list: Array<number> = [1, 2, 3]
-
-class User<T, K extends number> {
-	constructor(public name: T, public age: K) {}
+//Decorators
+class User {
+	constructor(public name: string, public age: number) {}
 
 	public getPass(): string {
 		return `${this.name}${this.age}${this.name}`
 	}
-
-	public getSecret(): number {
-		return this.age ** 2
-	}
 }
+
+//Decorator: Base structure
+const logClass = () => ()
+
+//Generics
+// const getter = (data: any): any => data
+
+// getter(13).length //undefined
+// getter('test').length //4
+
+// const getter2 = <T>(data: T): T => data //ES 6
+// function getter3<T>(data: T): T {
+// 	return data
+// } //ES 5
+
+// getter2(13).length
+// getter3('test').length
+
+// getter2<number>(31).length
+// getter3<string>('test').length
+
+// const list: Array<number> = [1, 2, 3]
+
+// class User<T, K extends number> {
+// 	constructor(public name: T, public age: K) {}
+
+// 	public getPass(): string {
+// 		return `${this.name}${this.age}${this.name}`
+// 	}
+
+// 	public getSecret(): number {
+// 		return this.age ** 2
+// 	}
+// }
 
 //Interfaces
 // interface User {
