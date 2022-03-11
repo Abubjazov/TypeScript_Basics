@@ -41,6 +41,26 @@ function factory(value: any) {
 	}
 }
 
+//Applying Factory Decorator
+const enumerable = (value: boolean) => {
+	return (
+		target: any,
+		propertyKey: string | symbol,
+		descriptor: PropertyDescriptor
+	) => {
+		descriptor.enumerable = value
+	}
+}
+
+class ElUser {
+	constructor(public name: string, public age: number) {}
+
+	@enumerable(false)
+	public getPass(): string {
+		return `${this.name}${this.age}${this.name}`
+	}
+}
+
 //Generics
 // const getter = (data: any): any => data
 
