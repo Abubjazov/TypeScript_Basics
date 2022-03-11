@@ -45,6 +45,14 @@ const todo: TodoPreview = {
 	completed: false,
 }
 
+//Omit<T, K>
+type TodoPreview2 = Omit<Todo, 'description'>
+
+const todo2: TodoPreview2 = {
+	title: 'Clean room',
+	completed: false,
+}
+
 // Decorators
 
 // classDecorator
