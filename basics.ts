@@ -79,6 +79,18 @@ type T6 = ReturnType<never>
 type T7 = ReturnType<string>
 type T8 = ReturnType<Function>
 
+//InstanceType<T>
+class C {
+	x = 0
+	y = 0
+}
+
+type J0 = InstanceType<typeof C>
+type J1 = InstanceType<any>
+type J2 = InstanceType<never>
+type J3 = InstanceType<string>
+type J4 = InstanceType<Function>
+
 // Decorators
 
 // classDecorator
