@@ -9,19 +9,41 @@ const user: Readonly<User> = {
 	name: 'username',
 }
 
-// //Decorators
+//Required<T>
+interface Props {
+	a?: number
+	b?: number
+}
 
-// //classDecorator
+const obj1: Props = { a: 5 }
+const obj2: Required<Props> = { a: 5, b: 2 }
+
+//Record<K, T>
+interface PageInfo {
+	title: string
+}
+
+type Page = 'home' | 'about' | 'contact'
+
+const x: Record<Page, PageInfo> = {
+	about: { title: 'about' },
+	contact: { title: 'contact' },
+	home: { title: 'home' },
+}
+
+// Decorators
+
+// classDecorator
 // const logClass = (constructor: Function) => {
 // 	console.log(constructor)
 // }
 
-// //propertyDecorator
+// propertyDecorator
 // const logProperty = (target: Object, propertyKey: string | symbol) => {
 // 	console.log(propertyKey)
 // }
 
-// //methodDecorator
+// methodDecorator
 // const logMethod = (
 // 	target: Object,
 // 	propertyKey: string | symbol,
@@ -45,14 +67,14 @@ const user: Readonly<User> = {
 // 	}
 // }
 
-// //Factory Decorator
+// Factory Decorator
 // function factory(value: any) {
 // 	return function (target: any) {
 // 		console.log(target)
 // 	}
 // }
 
-// //Applying Factory Decorator
+// Applying Factory Decorator
 // const enumerable = (value: boolean) => {
 // 	return (
 // 		target: any,
@@ -72,7 +94,7 @@ const user: Readonly<User> = {
 // 	}
 // }
 
-// //Decorator composition
+// Decorator composition
 // @f @g x
 
 // @f
