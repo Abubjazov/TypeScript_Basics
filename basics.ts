@@ -58,6 +58,14 @@ type T0 = Exclude<'a' | 'b' | 'c', 'a'>
 type T1 = Exclude<'a' | 'b' | 'c', 'a' | 'b'>
 type T2 = Exclude<string | number | (() => void), Function>
 
+//Extract<T, U>
+type T00 = Extract<'a' | 'b' | 'c', 'a' | 'f'>
+type T02 = Extract<string | number | (() => void), Function>
+
+//NonNullable<T>
+type T000 = NonNullable<string | number | undefined>
+type T002 = NonNullable<string[] | null | undefined>
+
 // Decorators
 
 // classDecorator
