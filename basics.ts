@@ -54,9 +54,9 @@ const todo2: TodoPreview2 = {
 }
 
 //Exclude<T, U>
-type T0 = Exclude<'a' | 'b' | 'c', 'a'>
-type T1 = Exclude<'a' | 'b' | 'c', 'a' | 'b'>
-type T2 = Exclude<string | number | (() => void), Function>
+type T0000 = Exclude<'a' | 'b' | 'c', 'a'>
+type T0001 = Exclude<'a' | 'b' | 'c', 'a' | 'b'>
+type T0002 = Exclude<string | number | (() => void), Function>
 
 //Extract<T, U>
 type T00 = Extract<'a' | 'b' | 'c', 'a' | 'f'>
@@ -65,6 +65,19 @@ type T02 = Extract<string | number | (() => void), Function>
 //NonNullable<T>
 type T000 = NonNullable<string | number | undefined>
 type T002 = NonNullable<string[] | null | undefined>
+
+//ReturnType<T>
+declare function f1(): { a: number; b: string }
+
+type T0 = ReturnType<() => string>
+type T1 = ReturnType<(s: string) => void>
+type T2 = ReturnType<<T>() => T>
+type T3 = ReturnType<<T extends X, X extends number[]>() => T>
+type T4 = ReturnType<typeof f1>
+type T5 = ReturnType<any>
+type T6 = ReturnType<never>
+type T7 = ReturnType<string>
+type T8 = ReturnType<Function>
 
 // Decorators
 
