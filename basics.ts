@@ -1,72 +1,83 @@
-//Decorators
+//Utility Types
 
-//classDecorator
-const logClass = (constructor: Function) => {
-	console.log(constructor)
+//Readonly<T>
+interface User {
+	name: string
 }
 
-//propertyDecorator
-const logProperty = (target: Object, propertyKey: string | symbol) => {
-	console.log(propertyKey)
+const user: Readonly<User> = {
+	name: 'username',
 }
 
-//methodDecorator
-const logMethod = (
-	target: Object,
-	propertyKey: string | symbol,
-	descriptor: PropertyDescriptor
-) => {
-	console.log(propertyKey)
-}
+// //Decorators
 
-@logClass
-class User {
-	@logProperty
-	secret: number
+// //classDecorator
+// const logClass = (constructor: Function) => {
+// 	console.log(constructor)
+// }
 
-	constructor(public name: string, public age: number, secret: number) {
-		this.secret = secret
-	}
+// //propertyDecorator
+// const logProperty = (target: Object, propertyKey: string | symbol) => {
+// 	console.log(propertyKey)
+// }
 
-	@logMethod
-	public getPass(): string {
-		return `${this.name}${this.age}${this.name}`
-	}
-}
+// //methodDecorator
+// const logMethod = (
+// 	target: Object,
+// 	propertyKey: string | symbol,
+// 	descriptor: PropertyDescriptor
+// ) => {
+// 	console.log(propertyKey)
+// }
 
-//Factory Decorator
-function factory(value: any) {
-	return function (target: any) {
-		console.log(target)
-	}
-}
+// @logClass
+// class User {
+// 	@logProperty
+// 	secret: number
 
-//Applying Factory Decorator
-const enumerable = (value: boolean) => {
-	return (
-		target: any,
-		propertyKey: string | symbol,
-		descriptor: PropertyDescriptor
-	) => {
-		descriptor.enumerable = value
-	}
-}
+// 	constructor(public name: string, public age: number, secret: number) {
+// 		this.secret = secret
+// 	}
 
-class ElUser {
-	constructor(public name: string, public age: number) {}
+// 	@logMethod
+// 	public getPass(): string {
+// 		return `${this.name}${this.age}${this.name}`
+// 	}
+// }
 
-	@enumerable(false)
-	public getPass(): string {
-		return `${this.name}${this.age}${this.name}`
-	}
-}
+// //Factory Decorator
+// function factory(value: any) {
+// 	return function (target: any) {
+// 		console.log(target)
+// 	}
+// }
 
-//Decorator composition
-@f @g x
+// //Applying Factory Decorator
+// const enumerable = (value: boolean) => {
+// 	return (
+// 		target: any,
+// 		propertyKey: string | symbol,
+// 		descriptor: PropertyDescriptor
+// 	) => {
+// 		descriptor.enumerable = value
+// 	}
+// }
 
-@f
-@g
-x
+// class ElUser {
+// 	constructor(public name: string, public age: number) {}
+
+// 	@enumerable(false)
+// 	public getPass(): string {
+// 		return `${this.name}${this.age}${this.name}`
+// 	}
+// }
+
+// //Decorator composition
+// @f @g x
+
+// @f
+// @g
+// x
 
 //Generics
 // const getter = (data: any): any => data
