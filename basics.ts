@@ -18,7 +18,7 @@ interface Props {
 const obj1: Props = { a: 5 }
 const obj2: Required<Props> = { a: 5, b: 2 }
 
-//Record<K, T>
+//Record<T, K>
 interface PageInfo {
 	title: string
 }
@@ -29,6 +29,20 @@ const x: Record<Page, PageInfo> = {
 	about: { title: 'about' },
 	contact: { title: 'contact' },
 	home: { title: 'home' },
+}
+
+//Pick<T, K>
+interface Todo {
+	title: string
+	description: string
+	completed: boolean
+}
+
+type TodoPreview = Pick<Todo, 'title' | 'completed'>
+
+const todo: TodoPreview = {
+	title: 'Clean room',
+	completed: false,
 }
 
 // Decorators
