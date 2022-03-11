@@ -34,6 +34,13 @@ class User {
 	}
 }
 
+//Factory Decorator
+function factory(value: any) {
+	return function (target: any) {
+		console.log(target)
+	}
+}
+
 //Generics
 // const getter = (data: any): any => data
 
