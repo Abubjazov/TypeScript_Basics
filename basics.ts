@@ -61,6 +61,13 @@ class ElUser {
 	}
 }
 
+//Decorator composition
+@f @g x
+
+@f
+@g
+x
+
 //Generics
 // const getter = (data: any): any => data
 
